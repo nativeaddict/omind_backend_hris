@@ -13,6 +13,6 @@ $factory->define(Kehadiran::class, function (Faker $faker) {
         'id_karyawan'   => $faker->randomElement($idkaryawan),
         'tap_in'        => $date.' '.$faker->time(),
         'tap_out'       => $date.' '.$faker->time(),
-        'feel'          => $faker->randomElement(['happy','sick','tired','chill'])
+        'feel'          => $faker->randomElement(['happy','chill','tired','confused'])
     ];
 });

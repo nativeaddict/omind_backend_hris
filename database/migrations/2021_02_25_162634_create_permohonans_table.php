@@ -21,7 +21,7 @@ class CreatePermohonansTable extends Migration
             $table->date('tgl_akhir');
             $table->string('deskripsi');
             $table->text('file');
-            $table->enum('status',['pending','rejected','approved'])->default('pending');
+            $table->enum('status',['pending','rejected','approved'])->default('pending')->nullable();
             $table->timestamps();
         });
 

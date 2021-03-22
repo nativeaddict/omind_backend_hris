@@ -70,7 +70,7 @@ class KaryawanController extends Controller
     }
 
     public function ourTeam() {
-        $karyawan = Karyawan::all('nama','posisi');
+        $karyawan = Karyawan::all('foto','nama','posisi');
 
         return response()->json([
             'status'    => 200,

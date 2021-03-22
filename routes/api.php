@@ -27,14 +27,18 @@ Route::middleware('auth:karyawan')->group(function(){
     #Berita
     Route::get('/news','BeritaController@viewNews');
     #Project
-    Route::get('/view-project','ProjectController@selectProject');
+    Route::get('/view-project','ProjectController@viewProject');
+    Route::post('/select-project','ProjectController@selectProject');
     #Tunjangan
     Route::get('/view-tunjangan', 'TunjanganController@viewTunjangan');
+    #Presensi
+    Route::post('/tap-in', 'KehadiranController@tapIn');
+    Route::post('/tap-out', 'KehadiranController@tapOut');
+    Route::get('/history-presensi', 'KehadiranController@historyPresensi');
+    #Agenda
+    Route::get('/view-agenda','AgendaController@viewAgenda');
+
 });
 
 #Permohonan
 Route::post('/upload-surat','PermohonanController@uploadFile');
-
-#Presensi
-Route::post('/tap-in', 'KehadiranController@tapIn');
-Route::post('/tap-out', 'KehadiranController@tapOut');
