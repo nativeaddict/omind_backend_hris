@@ -15,5 +15,6 @@ $factory->define(Admin::class, function (Faker $faker) {
         'tgl_lahir' => $faker->date,
         'posisi'    => $faker->randomElement(['HRD','Project Manager']),
         'no_hp'     => $faker->phoneNumber,
+        'foto'      => 'https://i.pravatar.cc/300'
     ];
 });

@@ -13,6 +13,7 @@ $factory->define(Ceo::class, function (Faker $faker) {
         'alamat'    => $faker->address,
         'tgl_lahir' => $faker->date,
         'sosmed'    => $faker->userName,
-        'no_hp'     => $faker->phoneNumber
+        'no_hp'     => $faker->phoneNumber,
+        'foto'      => 'https://i.pravatar.cc/300'
     ];
 });

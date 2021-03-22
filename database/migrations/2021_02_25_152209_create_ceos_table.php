@@ -22,6 +22,7 @@ class CreateCeosTable extends Migration
             $table->date('tgl_lahir');
             $table->text('sosmed');
             $table->string('no_hp');
+            $table->text('foto');
             $table->timestamps();
         });
     }

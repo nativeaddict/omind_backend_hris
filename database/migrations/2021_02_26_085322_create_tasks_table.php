@@ -19,6 +19,10 @@ class CreateTasksTable extends Migration
             $table->enum('status',['telat','awas','aman']);
             $table->timestamps();
         });
+
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('cascade')->onUpdate('cascade');
+        });
     }
 
     /**

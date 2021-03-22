@@ -17,11 +17,12 @@ $factory->define(Karyawan::class, function (Faker $faker) {
         'ktp'           => 'https://i.pravatar.cc/300',
         'ijazah'        => 'https://i.pravatar.cc/300',
         'gol_darah'     => $faker->randomElement(['O','A','B','AB']),
-        'sosmed'        => $faker->userName,
+        'instagram'     => $faker->userName,
         'hari_kerja'    => $faker->dayOfWeek,
         'posisi'        => $faker->randomElement(['UI/UX Designer', 'Fullstack Developer', 'Backend Developer','Frontend Developer']),
         'role'          => $faker->randomElement(['Production', 'Marketing', 'Project Manager']),
         'gaji_pokok'    => $faker->randomDigitNotNull,
-        'no_hp'         => $faker->phoneNumber       
+        'no_hp'         => $faker->phoneNumber,
+        'foto'          => 'https://i.pravatar.cc/300'
     ];  
 });

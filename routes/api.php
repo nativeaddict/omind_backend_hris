@@ -22,6 +22,14 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', 'KaryawanController@login');
 Route::middleware('auth:karyawan')->group(function(){
     Route::post('/ubah-pwd', 'KaryawanController@ubahPassword');
+    Route::get('/our-team','KaryawanController@ourTeam');
+    Route::get('/view-profile','KaryawanController@viewProfile');
+    #Berita
+    Route::get('/news','BeritaController@viewNews');
+    #Project
+    Route::get('/view-project','ProjectController@selectProject');
+    #Tunjangan
+    Route::get('/view-tunjangan', 'TunjanganController@viewTunjangan');
 });
 
 #Permohonan

@@ -23,6 +23,7 @@ class CreateAdminsTable extends Migration
             $table->date('tgl_lahir');
             $table->string('posisi');
             $table->string('no_hp');
+            $table->text('foto');
             $table->timestamps();
         });
     }

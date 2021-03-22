@@ -25,7 +25,7 @@ class CreateKaryawansTable extends Migration
             $table->text('ktp');
             $table->text('ijazah');
             $table->char('gol_darah');
-            $table->text('sosmed');
+            $table->text('instagram');
             $table->text('hari_kerja');
             $table->string('posisi');
             $table->string('role');

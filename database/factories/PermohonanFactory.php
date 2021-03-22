@@ -10,8 +10,11 @@ $factory->define(Permohonan::class, function (Faker $faker) {
     $idkaryawan = Karyawan::all()->pluck('id')->toArray();
     return [
         'id_karyawan'   => $faker->randomElement($idkaryawan),
-        'file'          => $faker->text,
-        'created_add'   => $faker->dateTime,
-        'jenis'         => $faker->randomElement(['Izin','Cuti','Sakit']),
+        'jenis'         => $faker->randomElement(['cuti_kontrak','nikah','melahirkan','duka','sakit','musibah']),
+        'tgl_mulai'     => $faker->date(),
+        'tgl_akhir'     => $faker->date(),
+        'deskripsi'     => $faker->text,
+        'file'          => 'https://i.pravatar.cc/300',
+        'status'        => $faker->randomElement(['pending','rejected','approved']),
     ];
 });

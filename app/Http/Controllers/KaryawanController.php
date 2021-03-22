@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -66,6 +67,26 @@ class KaryawanController extends Controller
             ]);
         }
         
+    }
+
+    public function ourTeam() {
+        $karyawan = Karyawan::all('nama','posisi');
+
+        return response()->json([
+            'status'    => 200,
+            'message'   => 'Data karyawan berhasil ditampilkan',
+            'data'      => $karyawan
+        ]);
+    }
+
+    public function viewProfile() {
+        $userLogin = auth('karyawan')->user();
+
+        return response()->json([
+            'status'    => 200,
+            'message'   => 'Profile Berhasil di Tampilkan',
+            'data'      => $userLogin
+        ]);
     }
 
     
