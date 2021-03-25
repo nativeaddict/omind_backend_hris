@@ -89,5 +89,11 @@ class KaryawanController extends Controller
         ]);
     }
 
+    public function viewGaji() {
+        $data = auth('karyawan')->id();
+
+        $data = Karyawan::where('')
+    }
+
     
 }

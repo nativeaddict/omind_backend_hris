@@ -15,6 +15,7 @@ class CreateAgendasTable extends Migration
     {
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_agenda');
             $table->string('jenis_agenda');
             $table->date('tgl_agenda');
             $table->time('jam_agenda');

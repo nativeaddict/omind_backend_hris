@@ -37,8 +37,8 @@ Route::middleware('auth:karyawan')->group(function(){
     Route::get('/history-presensi', 'KehadiranController@historyPresensi');
     #Agenda
     Route::get('/view-agenda','AgendaController@viewAgenda');
-
+    #Permohonan
+    Route::post('/upload-surat','PermohonanController@uploadFile');
+    #LogoutUser
+    Route::get('/logout','KaryawanController@logout');
 });
-
-#Permohonan
-Route::post('/upload-surat','PermohonanController@uploadFile');
