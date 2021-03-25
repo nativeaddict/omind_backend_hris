@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class KaryawanController extends Controller
@@ -90,9 +91,15 @@ class KaryawanController extends Controller
     }
 
     public function viewGaji() {
-        $data = auth('karyawan')->id();
+        $userLogin = auth('karyawan')->id();
 
-        $data = Karyawan::where('')
+        $data = Karyawan::where('id', $userLogin)->get('gaji_pokok');
+
+        return response()->json([
+            'status'    => 200,
+            'message'   => 'Gaji Berhasil ditampilkan',
+            'data'      => $data
+        ]);
     }
 
     

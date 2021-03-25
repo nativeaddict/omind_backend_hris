@@ -37,4 +37,16 @@ class PermohonanController extends Controller
             'data'      => $data
         ]);
     }
+
+    public function historySubmission() {
+        $userLogin = auth('karyawan')->id();
+
+        $data = Permohonan::where('id_karyawan', $userLogin)->get(['tgl_mulai','tgl_akhir','deskripsi','status']);
+
+        return response()->json([
+            'status'    => 200,
+            'message'   => 'History Submission Ditampilkan',
+            'data'      => $data
+        ]);
+    }
 }

@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TaskSeeder::class);
         $this->call(BeritaSeeder::class);
         $this->call(TunjanganSeeder::class);
+        $this->call(TglLiburSeeder::class);
+        $this->call(TotalGajiSeeder::class);
     }
 }

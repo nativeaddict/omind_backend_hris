@@ -65,4 +65,10 @@ class KehadiranController extends Controller
             'data'          => $data
         ]);
     }
+
+    public function avgPresensi() {
+        $userLogin = auth('karyawan')->id();
+
+        
+    }
 }

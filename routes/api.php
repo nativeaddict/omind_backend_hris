@@ -24,6 +24,7 @@ Route::middleware('auth:karyawan')->group(function(){
     Route::post('/ubah-pwd', 'KaryawanController@ubahPassword');
     Route::get('/our-team','KaryawanController@ourTeam');
     Route::get('/view-profile','KaryawanController@viewProfile');
+    Route::get('/view-gaji', 'KaryawanController@viewGaji');
     #Berita
     Route::get('/news','BeritaController@viewNews');
     #Project
@@ -39,6 +40,9 @@ Route::middleware('auth:karyawan')->group(function(){
     Route::get('/view-agenda','AgendaController@viewAgenda');
     #Permohonan
     Route::post('/upload-surat','PermohonanController@uploadFile');
+    Route::get('/history-submission', 'PermohonanController@historySubmission');
     #LogoutUser
     Route::get('/logout','KaryawanController@logout');
+    #Gaji
+    Route::get('/view-gaji', 'TotalGajiController@totalGaji');
 });

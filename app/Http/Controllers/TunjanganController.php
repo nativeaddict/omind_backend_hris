@@ -10,7 +10,7 @@ class TunjanganController extends Controller
     public function viewTunjangan() {
         $userLogin = auth('karyawan')->user();
         
-        $tunjangan = Tunjangan::where('id_karyawan', $userLogin->id)->get();
+        $tunjangan = Tunjangan::where('id_karyawan', $userLogin->id)->get(['jenis_tunjangan','jumlah_tunjangan']);
         
         return response()->json([
             'status'    => 200,
@@ -18,4 +18,5 @@ class TunjanganController extends Controller
             'data'      => $tunjangan
         ]);
     }
+
 }
