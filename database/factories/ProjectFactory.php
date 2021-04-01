@@ -9,6 +9,6 @@ $factory->define(Project::class, function (Faker $faker) {
     return [
         'nama_project'      => $faker->catchPhrase,
         'jenis_project'     => $faker->randomElement(['Mobile Apps', 'Website']),
-        'lama_pengerjaan'   => $faker->randomDigit,
+        'lama_pengerjaan'   => $faker->date('Y-m-d'),
     ];
 });

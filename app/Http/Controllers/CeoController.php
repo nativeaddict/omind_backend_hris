@@ -17,7 +17,5 @@ class CeoController extends Controller
             'email'     => 'Email',
             'password'  => 'Password'
         ]);
-
-        $token = Auth::guard('ceo')
     }
 }

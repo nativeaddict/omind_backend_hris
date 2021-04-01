@@ -16,7 +16,7 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_karyawan');
-            $table->enum('status',['telat','awas','aman']);
+            $table->enum('status',['Telat','Awas','Aman']);
             $table->timestamps();
         });
 

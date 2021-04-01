@@ -18,7 +18,7 @@ class CreateKehadiransTable extends Migration
             $table->unsignedBigInteger('id_karyawan');
             $table->dateTime('tap_in');
             $table->dateTime('tap_out')->nullable();
-            $table->enum('feel',['happy','chill','tired','confused']);
+            $table->enum('feel',['Happy','Chill','Tired','Confused']);
             $table->timestamps();
         });
 

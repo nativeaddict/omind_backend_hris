@@ -20,15 +20,29 @@ class CreateKaryawansTable extends Migration
             $table->text('password');
             $table->string('tmp_lahir');
             $table->date('tgl_lahir');
-            $table->enum('jenis_kelamin',['Laki-Laki','Perempuan']);
+            $table->enum('jenis_kelamin',['Man','Woman']);
             $table->string('alamat');
             $table->text('ktp');
             $table->text('ijazah');
-            $table->char('gol_darah');
+            $table->enum('gol_darah',[
+                'A',
+                'B',
+                'O',
+                'AB'
+            ]);
             $table->text('instagram');
-            $table->text('hari_kerja');
-            $table->string('posisi');
-            $table->string('role');
+            $table->integer('hari_kerja');
+            $table->enum('role',['Production','Marketing']);
+            $table->enum('posisi',[
+                'Fullstack Web Developer',
+                'Backend Web Developer',
+                'Frontend Web Developer',
+                'Fullstack Mobile Developer',
+                'Backedn Mobile Developer',
+                'Frontend Mobile Developer',
+                'UI/UX Designer',
+                'Graphic Designer',
+                'Marketing']);
             $table->integer('gaji_pokok');
             $table->string('no_hp');
             $table->text('foto');

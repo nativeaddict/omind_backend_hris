@@ -16,7 +16,7 @@ class CreateTunjangansTable extends Migration
         Schema::create('tunjangans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_karyawan');
-            $table->enum('jenis_tunjangan',['lembur','kesehatan','makan','transportasi','thr']);
+            $table->enum('jenis_tunjangan',['Lembur','Kesehatan','Makan','Transportasi','THR']);
             $table->integer('jumlah_tunjangan');
             $table->timestamps();
         });

@@ -16,8 +16,8 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('nama_project');
-            $table->string('jenis_project');
-            $table->text('lama_pengerjaan');
+            $table->enum('jenis_project',['Website','Mobile Apps']);
+            $table->date('lama_pengerjaan');
             $table->timestamps();
         });
     }

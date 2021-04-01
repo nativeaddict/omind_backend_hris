@@ -21,7 +21,10 @@ class CreateAdminsTable extends Migration
             $table->text('password');
             $table->string('alamat');
             $table->date('tgl_lahir');
-            $table->string('posisi');
+            $table->enum('posisi',[
+                'Project Manager',
+                'HRD'
+            ]);
             $table->string('no_hp');
             $table->text('foto');
             $table->timestamps();

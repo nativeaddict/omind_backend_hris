@@ -16,12 +16,12 @@ class CreatePermohonansTable extends Migration
         Schema::create('permohonans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_karyawan');
-            $table->enum('jenis',['cuti_kontrak','nikah','melahirkan','duka','sakit','musibah']);
+            $table->enum('jenis',['Cuti Kontrak','Nikah','Melahirkan','Duka','Sakit','Musibah']);
             $table->date('tgl_mulai');
             $table->date('tgl_akhir');
             $table->string('deskripsi');
             $table->text('file');
-            $table->enum('status',['pending','rejected','approved'])->default('pending')->nullable();
+            $table->enum('status',['Pending','Rejected','Approved'])->default('Pending')->nullable();
             $table->timestamps();
         });
 

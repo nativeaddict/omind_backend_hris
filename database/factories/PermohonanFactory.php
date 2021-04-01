@@ -10,7 +10,7 @@ $factory->define(Permohonan::class, function (Faker $faker) {
     $idkaryawan = Karyawan::all()->pluck('id')->toArray();
     return [
         'id_karyawan'   => $faker->randomElement($idkaryawan),
-        'jenis'         => $faker->randomElement(['cuti_kontrak','nikah','melahirkan','duka','sakit','musibah']),
+        'jenis'         => $faker->randomElement(['Cuti Kontrak','Nikah','Melahirkan','Duka','Sakit','Musibah']),
         'tgl_mulai'     => $faker->date(),
         'tgl_akhir'     => $faker->date(),
         'deskripsi'     => $faker->text,

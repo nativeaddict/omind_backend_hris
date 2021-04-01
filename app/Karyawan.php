@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Karyawan extends Authenticatable implements JWTSubject
 {
     use Notifiable;
-    
+
     protected $guarded = ['id'];
 
     protected $hidden = [
