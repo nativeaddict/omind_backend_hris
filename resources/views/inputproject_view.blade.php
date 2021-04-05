@@ -69,7 +69,6 @@
           <div class="card-footer">
             <div class="col-sm-9 offset-sm-3">
               <button class="btn btn-primary" type="submit">Submit</button>
-              <input class="btn btn-light" type="reset" value="Cancel">
             </div>
           </div>
         </form>

@@ -1,22 +1,30 @@
 <!-- Page Sidebar Start-->
 <div class="page-sidebar">
   <div class="main-header-left d-none d-lg-block">
-    <div class="logo-wrapper"><a href="{{route('/')}}"><img src="{{asset('assets/images/endless-logo.png')}}" alt=""></a></div>
+    <div class="logo-wrapper"><a href="{{route('dashboard')}}"><img src="{{asset('assets/images/endless-logo.png')}}" alt=""></a></div>
   </div>
   <div class="sidebar custom-scrollbar">
     <div class="sidebar-user text-center">
-      <div><img class="img-60 rounded-circle" src="{{asset('assets/images/user/1.jpg')}}" alt="#">
+      <div><img class="img-60 rounded-circle" src="{{$admin->foto}}" alt="#">
         <div class="profile-edit"><a href="edit-profile" target="_blank"><i data-feather="edit"></i></a></div>
       </div>
-      <h6 class="mt-3 f-14">ELANA</h6>
-      <p>General Manager.</p>
+      <h6 class="mt-3 f-14">{{$admin->nama}}</h6>
+      <p>{{$admin->posisi}}</p>
     </div>
     <ul class="sidebar-menu">
       <li class="{{request()->route()->getPrefix() == '/dashboard' ? 'active' : '' }}">
-        <a class="sidebar-header" href="{{route('/')}}"><i data-feather="home"></i><span>Dashboard</span>
+        <a class="sidebar-header" href="{{route('dashboard')}}"><i data-feather="home"></i><span>Dashboard</span>
         </a>
         {{-- <ul class="sidebar-submenu">
-          <li><a href="{{route('/')}}" class="{{ Route::currentRouteName()=='/' ? 'active' : '' }}"><i class="fa fa-circle"></i>Project Dashboard</a></li>
+          <li><a href="{{route('dashboard')}}" class="{{ Route::currentRouteName()=='/' ? 'active' : '' }}"><i class="fa fa-circle"></i>Project Dashboard</a></li>
+        </ul> --}}
+      </li>
+
+      <li class="{{request()->route()->getPrefix() == '/blog' ? 'active' : '' }}">
+        <a class="sidebar-header" href="{{route('news')}}"><i data-feather="book"></i><span>News</span>
+        </a>
+        {{-- <ul class="sidebar-submenu">
+          <li><a href="{{route('dashboard')}}" class="{{ Route::currentRouteName()=='/' ? 'active' : '' }}"><i class="fa fa-circle"></i>Project Dashboard</a></li>
         </ul> --}}
       </li>
 
@@ -25,14 +33,6 @@
           <li class="{{request()->route()->getPrefix() == '/form-controls' ? 'active' : '' }}"><a href="{{route('add-employee')}}"><i class="fa fa-plus"></i> Added Employees</a></li>
           <li class="{{request()->route()->getPrefix() == '/form-widgets' ? 'active' : '' }}"><a href="{{route('team-member')}}"><i class="fa fa-users"></i> Team Members</a></li>
         </ul>
-      </li>
-
-      <li class="{{request()->route()->getPrefix() == '/blog' ? 'active' : '' }}">
-        <a class="sidebar-header" href="{{route('news')}}"><i data-feather="book"></i><span>News</span>
-        </a>
-        {{-- <ul class="sidebar-submenu">
-          <li><a href="{{route('/')}}" class="{{ Route::currentRouteName()=='/' ? 'active' : '' }}"><i class="fa fa-circle"></i>Project Dashboard</a></li>
-        </ul> --}}
       </li>
 
       <li class="{{ in_array(Route::currentRouteName(), ['form-validation','base-input', 'radio-checkbox-control', 'input-group', 'megaoptions', 'datepicker', 'time-picker', 'datetimepicker', 'daterangepicker', 'touchspin', 'select2', 'switch', 'typeahead', 'clipboard', 'default-form', 'form-wizard', 'form-wizard-two', 'form-wizard-three', 'form-wizard-four']) ? 'active':''}}"><a class="sidebar-header" href="#"><i data-feather="activity"></i><span>Project</span><i class="fa fa-angle-right pull-right"></i></a>

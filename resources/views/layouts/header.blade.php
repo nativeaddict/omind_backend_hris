@@ -2,7 +2,7 @@
       <div class="page-main-header">
         <div class="main-header-right row">
           <div class="main-header-left d-lg-none">
-            <div class="logo-wrapper"><a href="{{route('/')}}"><img src="{{asset('assets/images/endless-logo.png')}}" alt=""></a></div>
+            <div class="logo-wrapper"><a href="{{route('dashboard')}}"><img src="{{asset('assets/images/endless-logo.png')}}" alt=""></a></div>
           </div>
           <div class="mobile-sidebar">
             <div class="media-body text-right switch-sm">
@@ -66,7 +66,7 @@
               </li>
               <li><a href="#"><i class="right_side_toggle" data-feather="message-circle"></i><span class="dot"></span></a></li>
               <li class="onhover-dropdown">
-                <div class="media align-items-center"><img class="align-self-center pull-right img-50 rounded-circle" src="{{asset('assets/images/dashboard/user.png')}}" alt="header-user">
+                <div class="media align-items-center"><img class="align-self-center pull-right img-50 rounded-circle" src="{{$admin->foto}}" alt="header-user">
                   <div class="dotted-animation"><span class="animate-circle"></span><span class="main-circle"></span></div>
                 </div>
                 <ul class="profile-dropdown onhover-show-div p-20">
@@ -74,7 +74,7 @@
                   <li><a href="#"><i data-feather="mail"></i>                                    Inbox</a></li>
                   <li><a href="#"><i data-feather="lock"></i>                                    Lock Screen</a></li>
                   <li><a href="#"><i data-feather="settings"></i>                                    Settings</a></li>
-                  <li><a href="#"><i data-feather="log-out"></i>                                    Logout</a></li>
+                  <li><a href="{{route('logout')}}"><i data-feather="log-out"></i>                                    Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -82,7 +82,7 @@
           </div>
           <script id="result-template" type="text/x-handlebars-template">
             <div class="ProfileCard u-cf">
-            
+
             <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
             <div class="ProfileCard-details">
             <div class="ProfileCard-realName">@{{name}}</div>
@@ -91,7 +91,7 @@
           </script>
           <script id="empty-template" type="text/x-handlebars-template">
             <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
-            
+
           </script>
         </div>
       </div>

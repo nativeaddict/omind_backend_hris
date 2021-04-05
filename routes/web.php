@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -304,7 +305,7 @@ Route::prefix('errors')->group(function () {
 });
 
 Route::prefix('authentication')->group(function () {
-  Route::view('/login', 'authentication.login')->name('login');
+  Route::get('/login', 'Admins\Auth\LoginController@index')->name('login');
   Route::view('/login-image', 'authentication.login-image')->name('login-image');
   Route::view('/login-video', 'authentication.login-video')->name('login-video');
   Route::view('/signup', 'authentication.signup')->name('signup');
@@ -332,9 +333,15 @@ Route::get('/clear-cache', function() {
     return 'DONE'; //Return anything
 });
 
-Route::get('/team-members', 'Admins\AdminKaryawanController@teamMember')->name('team-member');
-Route::post('/add-employees', 'Admins\AdminKaryawanController@createEmployee')->name('add-employees');
-Route::post('/post-news', 'Admins\AdminNewsController@addNews')->name('post-news');
-Route::post('/add-project', 'Admins\AdminProjectController@createProject')->name('add-project');
-Route::get('/delete/{project}', 'Admins\AdminProjectController@deleteProject');
-Route::post('/success-add', 'Admins\AdminKaryawanProjectController@createProjectKaryawan')->name('success-add');
+Route::get('/login', 'Admins\Auth\LoginController@index')->name('login');
+Route::post('/login','Admins\Auth\LoginController@adminLogin');
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/', 'Admins\DashboardController@index')->name('dashboard');
+    Route::get('/team-members', 'Admins\AdminKaryawanController@teamMember')->name('team-member');
+    Route::post('/add-employees', 'Admins\AdminKaryawanController@createEmployee')->name('add-employees');
+    Route::post('/post-news', 'Admins\AdminNewsController@addNews')->name('post-news');
+    Route::post('/add-project', 'Admins\AdminProjectController@createProject')->name('add-project');
+    Route::get('/delete/{project}', 'Admins\AdminProjectController@deleteProject');
+    Route::post('/success-add', 'Admins\AdminKaryawanProjectController@createProjectKaryawan')->name('success-add');
+    Route::get('/logout','Admins\Auth\LoginController@adminLogout')->name('logout');
+});

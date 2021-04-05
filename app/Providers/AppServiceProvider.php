@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Admin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('layouts.sidebar', function($admin){
+
+            $user = Auth::guard('admin')->user();
+
+            $admin->with(['admin' => $user]);
+        });
+
+        view()->composer('layouts.header', function($admin){
+
+            $user = Auth::guard('admin')->user();
+
+            $admin->with(['admin' => $user]);
+        });
     }
 }

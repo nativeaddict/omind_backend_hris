@@ -50,6 +50,10 @@ return [
             'driver'    => 'jwt',
             'provider'  => 'karyawans',
             'hash'      => true
+        ],
+        'admin' => [
+            'driver'    => 'session',
+            'provider'  => 'admins'
         ]
     ],
 
@@ -78,6 +82,10 @@ return [
         'karyawans' => [
             'driver'    => 'eloquent',
             'model'     => App\Karyawan::class
+        ],
+        'admins'    => [
+            'driver'    => 'eloquent',
+            'model'     => App\Admin::class
         ]
 
         // 'users' => [
