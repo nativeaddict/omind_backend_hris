@@ -40,7 +40,7 @@
                       <th scope="col">Name</th>
                       <th scope="col">Position</th>
                       <th scope="col">E-Mail</th>
-                      <th scope="col">Phone</th>
+                      <th scope="col">Phone Number</th>
                     </tr>
                   </thead>
                   <tbody>

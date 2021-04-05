@@ -16,7 +16,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xl-12 mb-2">
-        <a href="{{route('add-news')}}" class="btn btn-pill btn-outline-primary-2x mb-2 float-right"><i class="fa fa-plus"></i> Added News</a>
+        <a href="{{route('form-employee-project')}}" class="btn btn-pill btn-outline-primary-2x mb-2 float-right">Added Project <i class="fa fa-plus"></i></a>
     </div>
     <!-- Add rows  Starts-->
     <!-- Add rows Ends-->

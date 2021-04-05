@@ -104,6 +104,7 @@ Route::prefix('buttons')->group(function () {
 Route::prefix('form-controls')->group(function () {
   Route::view('/add-employee', 'addemployee_view')->name('add-employee');
   Route::get('/form-project', 'Admins\AdminProjectController@formProject')->name('form-project');
+  Route::get('/form-employee-project', 'Admins\AdminKaryawanProjectController@formProjectKaryawan')->name('form-employee-project');
   Route::view('/radio-checkbox-control', 'forms.form-controls.radio-checkbox-control')->name('radio-checkbox-control');
   Route::view('/input-group', 'forms.form-controls.input-group')->name('input-group');
   Route::view('/megaoptions', 'forms.form-controls.megaoptions')->name('megaoptions');
@@ -336,3 +337,4 @@ Route::post('/add-employees', 'Admins\AdminKaryawanController@createEmployee')->
 Route::post('/post-news', 'Admins\AdminNewsController@addNews')->name('post-news');
 Route::post('/add-project', 'Admins\AdminProjectController@createProject')->name('add-project');
 Route::get('/delete/{project}', 'Admins\AdminProjectController@deleteProject');
+Route::post('/success-add', 'Admins\AdminKaryawanProjectController@createProjectKaryawan')->name('success-add');
