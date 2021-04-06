@@ -20,6 +20,14 @@
         </ul> --}}
       </li>
 
+      <li class="{{request()->route()->getPrefix() == '/timeline' ? 'active' : '' }}">
+        <a class="sidebar-header" href="{{route('agenda')}}"><i data-feather="sliders"></i><span>Agenda</span>
+        </a>
+        {{-- <ul class="sidebar-submenu">
+          <li><a href="{{route('dashboard')}}" class="{{ Route::currentRouteName()=='/' ? 'active' : '' }}"><i class="fa fa-circle"></i>Project Dashboard</a></li>
+        </ul> --}}
+      </li>
+
       <li class="{{request()->route()->getPrefix() == '/blog' ? 'active' : '' }}">
         <a class="sidebar-header" href="{{route('news')}}"><i data-feather="book"></i><span>News</span>
         </a>

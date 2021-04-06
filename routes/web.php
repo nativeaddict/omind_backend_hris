@@ -175,7 +175,7 @@ Route::prefix('cards')->group(function () {
 });
 
 Route::prefix('timeline')->group(function () {
-  Route::view('/timeline-v-1', 'timeline.timeline-v-1')->name('timeline-v-1');
+  Route::get('/agenda', 'Admins\AdminAgendaController@index')->name('agenda');
   Route::view('/timeline-v-2', 'timeline.timeline-v-2')->name('timeline-v-2');
   Route::view('/timeline-small', 'timeline.timeline-small')->name('timeline-small');
 });
@@ -344,4 +344,5 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/delete/{project}', 'Admins\AdminProjectController@deleteProject');
     Route::post('/success-add', 'Admins\AdminKaryawanProjectController@createProjectKaryawan')->name('success-add');
     Route::get('/logout','Admins\Auth\LoginController@adminLogout')->name('logout');
+    Route::post('/submitAgenda','Admins\AdminAgendaController@submitAgenda')->name('submitAgenda');
 });

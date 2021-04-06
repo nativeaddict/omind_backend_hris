@@ -44,7 +44,7 @@
                 <!-- Bookmark Start-->
                 <div class="col">
                   <div class="bookmark pull-right">
-                    <ul>
+                    {{-- <ul>
                       <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Calendar"><i data-feather="calendar"></i></a></li>
                       <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Mail"><i data-feather="mail"></i></a></li>
                       <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Chat"><i data-feather="message-square"></i></a></li>
@@ -55,7 +55,7 @@
                           </div>
                         </form>
                       </li>
-                    </ul>
+                    </ul> --}}
                   </div>
                 </div>
                 <!-- Bookmark Ends-->
