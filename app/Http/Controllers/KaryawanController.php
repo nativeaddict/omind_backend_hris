@@ -34,7 +34,7 @@ class KaryawanController extends Controller
             return response()->json([
                 'status'    => 401,
                 'message'   => 'Gagal Login'
-            ]);
+            ],401);
         }
     }
 
@@ -51,7 +51,7 @@ class KaryawanController extends Controller
             'password_lama'     => 'required',
             'password_baru'     => 'required',
         ]);
-        
+
         $userLogin = auth('karyawan')->user();
 
         if (Hash::check($data['password_lama'], $userLogin->password)) {
@@ -67,7 +67,7 @@ class KaryawanController extends Controller
                 'message'   => 'Password Lama Salah'
             ]);
         }
-        
+
     }
 
     public function ourTeam() {
@@ -102,5 +102,5 @@ class KaryawanController extends Controller
         ]);
     }
 
-    
+
 }
